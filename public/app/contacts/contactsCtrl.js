@@ -6,4 +6,3 @@ app.controller('contactsCtrl', function ($scope, $http) {
   });
 
 });
-
