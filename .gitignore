@@ -1,2 +1,4 @@
 .idea/workspace.xml
 node_modules/
+
+.idea/libraries/angular_testing_node_modules.xml
