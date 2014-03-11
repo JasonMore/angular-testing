@@ -7,3 +7,4 @@ app.controller('contactsCtrl', function ($scope, $http) {
     $scope.contacts = data;
   });
 });
+
