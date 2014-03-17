@@ -1,3 +1,9 @@
 <div ng-controller="contactsCtrl">
-  {{message}}
+  <div class="media" ng-repeat="contact in contacts">
+    <img class="media-object pull-left" src="img/{{contact.name}}.jpg">
+    <div class="media-body">
+      <h4 class="media-heading">{{contact.name}}</h4>
+      {{contact.age}}
+    </div>
+  </div>
 </div>
