@@ -11,12 +11,21 @@ module.exports = function(config) {
     // frameworks to use
     frameworks: ['jasmine'],
 
+    preprocessors: {
+      '**/*.html': ['ng-html2js']
+    },
+
+    ngHtml2JsPreprocessor: {
+      stripPrefix: 'public/',
+      moduleName: 'preloadAllHtmlTemplates'
+    },
 
     // list of files / patterns to load in the browser
     files: [
       'public/lib/angular.js',
       'public/lib/angular-mocks.js',
-      'public/app/**/*.js'
+      'public/app/**/*.js',
+      'public/app/**/*.html'
     ],
 
 
