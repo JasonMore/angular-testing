@@ -5,6 +5,11 @@ app.directive('contact', function () {
     replace: true,
     scope: {
       contact: '=data'
+    },
+    link: function(scope) {
+      scope.addYear = function() {
+        scope.contact.age +=1;
+      }
     }
   }
 });

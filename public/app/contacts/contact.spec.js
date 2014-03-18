@@ -22,4 +22,15 @@ describe('contact.js >', function () {
   it('has age', function () {
     expect(element.html()).toContain('45');
   });
+
+  describe('adding age >', function () {
+    beforeEach(function () {
+      directiveScope.addYear();
+    });
+
+    it('age goes from 45 to 46', function () {
+      expect(parentScope.testContact.age).toEqual(46);
+      expect(directiveScope.contact.age).toEqual(46);
+    });
+  });
 }); 

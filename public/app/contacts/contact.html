@@ -1,5 +1,7 @@
 <div class="media">
-  <img class="media-object pull-left" ng-src="img/{{contact.name}}.jpg">
+  <a ng-click="addYear()" class="media-object pull-left btn btn-default">
+    <img ng-src="img/{{contact.name}}.jpg">
+  </a>
   <div class="media-body">
     <h4 class="media-heading">{{contact.name}}</h4>
     {{contact.age}}
