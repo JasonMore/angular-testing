@@ -12,7 +12,7 @@ describe('contact.js >', function () {
     $compile(element)(parentScope);
     parentScope.$digest();
 
-    directiveScope = element.scope();
+    directiveScope = element.isolateScope();
   }));
 
   it('creates and element with Johnny', function () {
