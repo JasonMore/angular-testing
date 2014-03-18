@@ -2,14 +2,17 @@ describe('contact.js >', function () {
   beforeEach(module('preloadAllHtmlTemplates'));
   beforeEach(module('angular-testing'));
 
-  var scope, element;
+  var parentScope, directiveScope, element;
 
   beforeEach(inject(function ($rootScope, $compile) {
-    scope = $rootScope.$new();
-    scope.testContact = {name: 'Johnny', age: 45};
+    parentScope = $rootScope.$new();
+    parentScope.testContact = {name: 'Johnny', age: 45};
+
     element = angular.element('<contact data="testContact"></contact>');
-    $compile(element)(scope);
-    scope.$digest();
+    $compile(element)(parentScope);
+    parentScope.$digest();
+
+    directiveScope = element.scope();
   }));
 
   it('creates and element with Johnny', function () {
