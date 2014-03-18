@@ -1,12 +1,16 @@
 {
   "name": "angular-testing",
-  "scripts":{
-      "start": "supervisor -w server.js server.js"
+  "scripts": {
+    "start": "supervisor -w server.js server.js"
   },
   "dependencies": {
     "express": "^3.5.0"
   },
   "engines": {
     "node": ">= 0.10.0"
+  },
+  "devDependencies": {
+    "karma": "^0.12.1",
+    "karma-ng-html2js-preprocessor": "^0.1.0"
   }
 }
