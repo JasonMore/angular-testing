@@ -1,4 +1,4 @@
-app.directive('contact', function () {
+app.directive('contact', function (random) {
   return {
     restrict: 'E',
     templateUrl: 'app/contacts/contact.html',
@@ -9,6 +9,9 @@ app.directive('contact', function () {
     link: function(scope) {
       scope.addYear = function() {
         scope.contact.age +=1;
+      };
+      scope.setRandomAge = function(){
+        scope.contact.age = random.age();
       }
     }
   }

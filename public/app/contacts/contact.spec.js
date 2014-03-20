@@ -33,4 +33,15 @@ describe('contact.js >', function () {
       expect(directiveScope.contact.age).toEqual(46);
     });
   });
+
+  describe('setting random age >', function () {
+    beforeEach(inject(function (random) {
+      spyOn(random, 'age').andReturn(1000);
+      directiveScope.setRandomAge();
+    }));
+
+    it('random age is set to 1000', function () {
+      expect(directiveScope.contact.age).toEqual(1000);
+    });
+  });
 }); 
