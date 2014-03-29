@@ -2,9 +2,9 @@ describe('contact.js >', function () {
   beforeEach(module('preloadAllHtmlTemplates'));
   beforeEach(module('angular-testing'));
 
-  var parentScope, directiveScope, element;
+  var parentScope, directiveScope, element, $timeout;
 
-  beforeEach(inject(function ($rootScope, $compile) {
+  beforeEach(inject(function ($rootScope, $compile, _$timeout_) {
     parentScope = $rootScope.$new();
     parentScope.testContact = {name: 'Johnny', age: 45};
 
@@ -13,6 +13,8 @@ describe('contact.js >', function () {
     parentScope.$digest();
 
     directiveScope = element.isolateScope();
+
+    $timeout = _$timeout_;
   }));
 
   it('creates and element with Johnny', function () {
@@ -31,6 +33,22 @@ describe('contact.js >', function () {
     it('age goes from 45 to 46', function () {
       expect(parentScope.testContact.age).toEqual(46);
       expect(directiveScope.contact.age).toEqual(46);
+    });
+
+    it('when addYear called again, does nothing', function(){
+      directiveScope.addYear();
+      expect(parentScope.testContact.age).toEqual(46);
+    });
+
+    describe('two seconds passed >', function () {
+      beforeEach(function () {
+        $timeout.flush(2001);
+        directiveScope.addYear();
+      });
+
+      it('age goes from 46 to 47', function () {
+        expect(directiveScope.contact.age).toEqual(47);
+      });
     });
   });
 
