@@ -6,5 +6,4 @@ app.controller('contactsCtrl', function ($scope, $http) {
   $http.get('/api/contacts').success(function (data) {
     $scope.contacts = data;
   });
-
 });
