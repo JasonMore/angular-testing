@@ -22,7 +22,7 @@ describe('contactsCtrl >', function () {
   });
 
   it('no contacts loaded yet', function () {
-    expect($scope.contacts).toBeUndefined();
+    expect($scope.contacts).toEqual([]);
   });
 
   describe('server responds >', function () {

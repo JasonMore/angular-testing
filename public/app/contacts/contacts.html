@@ -1,3 +1,5 @@
 <div ng-controller="contactsCtrl">
-  <contact data="contact" ng-repeat="contact in contacts"></contact>
+  <pre><input type="range" ng-model="bottom" min="0" max="100"> {{bottom}}</pre>
+  <pre><input type="range" ng-model="top" min="0" max="100"> {{top}}</pre>
+  <contact data="contact" ng-repeat="contact in contacts | age:bottom:top"></contact>
 </div>
