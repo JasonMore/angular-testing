@@ -4,9 +4,9 @@ How to setup angular testing
 
 setup
 =====================
-npm install -g supervisor
-npm install -g karma
-brew install chromedriver
+npm install -g nodemon
+npm install -g karma-cli
+brew install [chromedriver](https://code.google.com/p/selenium/wiki/ChromeDriver)
 npm install
 
 running
