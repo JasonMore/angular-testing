@@ -1,18 +1,18 @@
 {
   "name": "angular-testing",
   "scripts": {
-    "start": "supervisor -w server.js server.js"
+    "start": "nodemon -w server.js server.js"
   },
   "dependencies": {
-    "express": "^3.5.0"
+    "express": "^4.9.4"
   },
   "engines": {
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "karma": "^0.12.1",
-    "karma-ng-html2js-preprocessor": "^0.1.0",
+    "karma": "^0.12.23",
+    "karma-chrome-launcher": "^0.1.4",
     "karma-jasmine": "^0.1.5",
-    "karma-chrome-launcher": "^0.1.2"
+    "karma-ng-html2js-preprocessor": "^0.1.0"
   }
 }
